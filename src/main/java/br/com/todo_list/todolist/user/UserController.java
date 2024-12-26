@@ -22,8 +22,6 @@ public class UserController {
       return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuário já existe.");
     }
 
-    userModel.setPassword(userModel.getPassword());
-
     var userCreated = this.userRepository.save(userModel);
 
     return ResponseEntity.status(HttpStatus.CREATED).body(userCreated);
